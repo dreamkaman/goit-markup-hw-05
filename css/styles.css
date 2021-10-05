@@ -1,6 +1,7 @@
 /* --------------------------------shared styles--------------------------------*/
 :root {
   --main-blue: #2196f3;
+  --main-icons: #afb1b8;
   --hover-blue: #188ce8;
   --main-white: #ffffff;
   --main-black: #212121;
@@ -9,7 +10,7 @@
   --background-sahara: #f5f4fa;
   --background-black: #2f303a;
   --background-hero: #c4c4c4;
-  --background-social: #afb1b8;
+  --background-social: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -164,7 +165,7 @@ ul {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/hero-bg.png");
+    url('../images/hero-bg.png');
   background-size: cover;
 
   background-color: var(--background-hero);
@@ -185,6 +186,10 @@ ul {
 }
 
 .hero-wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   max-width: 700px;
   margin-right: auto;
   margin-left: auto;
@@ -199,8 +204,6 @@ ul {
   padding-left: 32px;
   border-radius: 4px;
   border: 0;
-  margin-left: auto;
-  margin-right: auto;
 
   font-family: Roboto, sans-serif;
   font-weight: 700;
@@ -222,31 +225,47 @@ ul {
   padding-bottom: 94px;
 }
 
-.features-icon {
+/* .features-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+} */
 
+.features-item::before {
+  content: '';
+  display: block;
   height: 120px;
   border-radius: 4px;
   margin-bottom: 30px;
-
   background-color: var(--background-sahara);
+  background-repeat: no-repeat;
+  background-size: 70px 70px;
+  background-position: 50% 50%;
 }
 
-.features-icon-svg {
-  width: 70px;
-  height: 70px;
+.icon-antenna::before {
+  background-image: url('../images/antenna.svg');
 }
 
-.features h2,
-.services h2,
-.team h2,
-.regular-customers h2 {
+.icon-clock::before {
+  background-image: url('../images/clock.svg');
+}
+
+.icon-diagram::before {
+  background-image: url('../images/diagram.svg');
+}
+
+.icon-astronaut::before {
+  background-image: url('../images/astronaut.svg');
+}
+
+.section-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .features h3 {
@@ -288,11 +307,6 @@ ul {
   padding-bottom: 94px;
 }
 
-.services h2 {
-  margin-top: 0;
-  margin-bottom: 40px;
-}
-
 .services-list {
   display: flex;
   flex-wrap: wrap;
@@ -312,11 +326,6 @@ ul {
   padding-bottom: 94px;
 
   background-color: var(--background-sahara);
-}
-
-.team h2 {
-  margin-top: 0;
-  margin-bottom: 50px;
 }
 
 .team-list {
@@ -391,7 +400,7 @@ ul {
 .team-item-social-link-svg {
   width: 20px;
   height: 20px;
-  fill: var(--background-social);
+  fill: var(--main-icons);
 }
 
 .team-item-social-link a:hover,
@@ -408,11 +417,6 @@ ul {
 .regular-customers {
   padding-top: 94px;
   padding-bottom: 94px;
-}
-
-.regular-customers h2 {
-  margin-top: 0;
-  margin-bottom: 50px;
 }
 
 .regular-customers-list {
@@ -432,10 +436,10 @@ ul {
   align-items: center;
   justify-content: center;
 
-  width: 170px;
+  width: 100%;
   height: 92px;
   border-radius: 4px;
-  border: 1px solid var(--background-social);
+  border: 1px solid var(--main-icons);
 }
 
 .regular-customers-link:hover,
@@ -453,7 +457,7 @@ ul {
   align-items: center;
   justify-content: center;
 
-  fill: var(--background-social);
+  fill: var(--main-icons);
 }
 
 .footer-text {
@@ -469,10 +473,24 @@ ul {
 
 .footer-text .container {
   display: flex;
+  justify-content: center;
+}
+
+.container-left-side {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: calc((100% - 30px) / 2);
+}
+
+.container-right-side {
+  width: calc((100% - 30px) / 2);
 }
 
 .footer-logo-address {
-  margin-right: 86px;
+  width: calc((100% - 30px) / 2);
+  /* margin-right: 86px; */
 }
 
 .footer-text .logo {
@@ -506,7 +524,8 @@ ul {
 }
 
 .footer-social-links {
-  padding-top: 12px;
+  padding-top: 16px;
+  width: calc((100% - 30px) / 2);
 }
 
 .footer-social-links p {
@@ -622,7 +641,7 @@ ul {
   padding-bottom: 20px;
 }
 
-.examples-list h2 {
+.examples-item-title {
   margin-top: 0;
   margin-bottom: 4px;
 
