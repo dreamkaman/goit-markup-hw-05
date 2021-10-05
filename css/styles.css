@@ -19,7 +19,8 @@ body {
   letter-spacing: 0.03em;
 }
 
-.nav-list .current {
+.nav-item .current {
+  position: relative;
   color: var(--main-blue);
 }
 
@@ -115,6 +116,18 @@ ul {
 .nav-list a:hover,
 .nav-list a:focus {
   color: var(--main-blue);
+}
+
+.current::after {
+  position: absolute;
+  bottom: 0;
+
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--main-blue);
 }
 
 .nav-item:not(:last-child) {
@@ -316,9 +329,29 @@ ul {
 }
 
 .services-item {
+  position: relative;
+
   margin-top: 30px;
   margin-left: 30px;
   width: calc((100% - 3 * 30px) / 3);
+}
+
+.services-item-title {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  margin: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  font-size: 14px;
+  line-height: 1.17;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--main-white);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 .team {
