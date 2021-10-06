@@ -742,7 +742,12 @@ ul {
   background-color: rgba(33, 150, 243, 0.9);
 }
 
-.examples-item:hover .example-hint {
+.examples-item-link {
+  text-decoration: none;
+}
+
+.examples-item-link:hover .example-hint,
+.examples-item-link:focus .example-hint {
   transform: translatey(0);
 
   transition-property: transform;
@@ -768,6 +773,8 @@ ul {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+
+  color: var(--main-black);
 }
 
 .example-description p {
