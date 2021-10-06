@@ -543,8 +543,8 @@ ul {
 
 .container-left-side {
   display: flex;
-  align-items: flex-start;
   align-items: baseline;
+  justify-content: space-between;
 
   width: calc((100% - 30px) / 2);
 }
