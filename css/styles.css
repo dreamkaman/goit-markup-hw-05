@@ -512,7 +512,7 @@ ul {
 .container-left-side {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  align-items: baseline;
 
   width: calc((100% - 30px) / 2);
 }
@@ -557,7 +557,7 @@ ul {
 }
 
 .footer-social-links {
-  padding-top: 16px;
+  /* padding-top: 16px; */
   width: calc((100% - 30px) / 2);
 }
 
